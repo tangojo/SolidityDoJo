@@ -5,8 +5,8 @@ contract Token {
     mapping(address => uint) public balances;
     mapping(address => mapping(address => uint)) public allowance;
     uint public totalSupply = 1000000 * 10 ** 18;
-    string public name = "DFT4";
-    string public symbol = "DFT4";
+    string public name = "UpOnlyToken";
+    string public symbol = "UOT";
     uint public decimals = 18;
     uint public transactionTax = 5;
     
