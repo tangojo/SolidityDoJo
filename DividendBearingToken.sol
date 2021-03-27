@@ -74,11 +74,14 @@ contract DividendBearingToken {
         return true;
     }
     
-    function transferFrom(address from, address to, uint value) public returns(bool) {
+    function transferFrom(address from, address to, uint value) updateAccount(from) public returns(bool) {
         require(balanceOf(from) >= value, 'balance too low');
         require(allowance[from][msg.sender] >= value, 'allowance too low');
-        accounts[to].balance += value;
+        uint restValueAfterTax = restValueAfterTaxFee(value);
         accounts[msg.sender].balance -= value;
+        accounts[to].balance += restValueAfterTax;
+        uint netDividend = value - restValueAfterTax;
+        totalDividends += netDividend;
         emit Transfer(from, to, value);
         return true;
     }
