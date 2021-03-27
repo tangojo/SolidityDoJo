@@ -1,3 +1,12 @@
+/*
+    Tax Burn Token 
+    
+    - every token transaction/transfer is taxed (5%)
+    - fixed Supply Token
+    - tax is sent tu burn address 0x0000000000000000000000000000000000000001
+*/
+
+
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.2;
 
