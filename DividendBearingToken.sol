@@ -26,7 +26,7 @@ contract DividendBearingToken {
     string public symbol = "DBT";
     uint public decimals = 0;
     uint public transactionTax = 5;
-    uint totalDividends;
+    uint public totalDividends;
     
     
     event Transfer(address indexed from, address indexed to, uint value);
@@ -50,25 +50,27 @@ contract DividendBearingToken {
       _;
     }
         
-    function calculateTaxFee(uint amount) private view returns (uint) {
+    function restValueAfterTaxFee(uint amount) private view returns (uint) {
         return (amount*(100-transactionTax))/100;
     }
     
-    function balanceOf(address owner) updateAccount(owner) public returns (uint) {
+    function balanceOf(address owner) public view returns (uint) {
         return accounts[owner].balance;
     }
     
-    function transfer(address to, uint value) updateAccount(to) public returns(bool)	 {
+    function lastDividendsOf(address owner) public view returns (uint) {
+        return accounts[owner].lastDividends;
+    }    
+    
+    function transfer(address to, uint value) updateAccount(msg.sender) public returns(bool)	 {
         require(balanceOf(msg.sender) >= value, 'balance too low');
-        // value minus tax
-        uint netValue = calculateTaxFee(value);
-        // value to burn
-        uint valueToBurn = value - netValue;
-        totalDividends += valueToBurn;
-        accounts[to].balance = accounts[to].balance + netValue;
+        uint restValueAfterTax = restValueAfterTaxFee(value);
         accounts[msg.sender].balance -= value;
+        accounts[to].balance += restValueAfterTax;
+        uint netDividend = value - restValueAfterTax;
+        totalDividends += netDividend;
 
-        emit Transfer(msg.sender, to, netValue);
+        emit Transfer(msg.sender, to, netDividend);
         return true;
     }
     
