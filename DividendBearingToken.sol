@@ -39,7 +39,7 @@ contract DividendBearingToken {
     function dividendsOwing(address account) internal view returns(uint) {
       uint newDividends = totalDividends - accounts[account].lastDividends;
       return (accounts[account].balance * newDividends) / totalSupply;
-        }
+    }
     
     modifier updateAccount(address account) {
       uint owing = dividendsOwing(account);
