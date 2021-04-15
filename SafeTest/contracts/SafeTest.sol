@@ -2,7 +2,7 @@
 /**
   
    #SAFETEST is a Safemoon clone for the testnet.
-   Features:
+   Inital deployment configuration:
    - _decimals = 9
    - _tTotal = 1000 * 10**6 * 10**9; // 1 billion 
    - _liquidityFee = 5; // provides Liquidity to Pancakeswap; original $HATE $LIQ logic
