@@ -1,5 +1,5 @@
 # SafeTest 
-SAFETEST is a Safemoon clone for testnet purposes.
+SAFETEST is a Safemoon clone for BSC testnet purposes.
 
 Inital deployment configuration:
 - _decimals = 9
@@ -11,4 +11,4 @@ Inital deployment configuration:
 - numTokensSellToAddToLiquidity = 500 * 10**6 * 10**9; // initially set  to half a billion
 
 Changes made:
-- Pancakeswap Router address to 0xD99D1c33F9fC3444f8101754aBC46c52416550D1 testnet
+- Pancakeswap Router address to 0xD99D1c33F9fC3444f8101754aBC46c52416550D1 for BSC testnet
