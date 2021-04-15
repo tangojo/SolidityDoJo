@@ -12,3 +12,7 @@ Inital deployment configuration:
 
 Changes made:
 - Pancakeswap Router address to 0xD99D1c33F9fC3444f8101754aBC46c52416550D1 for BSC testnet
+
+
+Deployed on BSC Testnet:
+https://testnet.bscscan.com/address/0xf841C7205B53C9EDdF2b68e9834f62d65bcA8C1e

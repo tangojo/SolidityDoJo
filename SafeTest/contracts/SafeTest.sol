@@ -27,11 +27,6 @@
     setLiquidityFeePercent (To your lp tax fee amount)
     setTaxFeePercent (To your reflect fee amount)
 
-    ###############
-
-    https://testnet.bscscan.com/address/0xDb2F99d930f4FC836A1075d236a6a70AE68fF7A2
-
-
  */
 
 pragma solidity ^0.6.12;
