@@ -15,4 +15,4 @@ Changes made:
 
 
 Deployed on BSC Testnet:
-https://testnet.bscscan.com/address/0xf841C7205B53C9EDdF2b68e9834f62d65bcA8C1e
+https://testnet.bscscan.com/address/0x834f1107C7E92bCF163ec777b36F5156779Ae6E3
